@@ -1,7 +1,14 @@
 #include <iostream>
 #include <string>
 #include "Student.h"
-int main()
+#include "resource.h"
+using namespace::std;
+void main()
 {
 
+
+	
+
+	//cout << "test" << endl;
+	//getchar();
 }
