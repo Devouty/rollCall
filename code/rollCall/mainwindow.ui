@@ -78,6 +78,8 @@
      <string>文件</string>
     </property>
     <addaction name="actionDfh"/>
+    <addaction name="actionSg"/>
+    <addaction name="actionYhjh"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -117,6 +119,16 @@
   <action name="actionDfh">
    <property name="text">
     <string>dfh</string>
+   </property>
+  </action>
+  <action name="actionSg">
+   <property name="text">
+    <string>sg</string>
+   </property>
+  </action>
+  <action name="actionYhjh">
+   <property name="text">
+    <string>yhjh</string>
    </property>
   </action>
  </widget>
