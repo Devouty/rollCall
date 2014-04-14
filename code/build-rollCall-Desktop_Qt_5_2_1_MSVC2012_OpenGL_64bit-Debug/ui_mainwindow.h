@@ -29,12 +29,12 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionDfh;
     QWidget *centralWidget;
     QTreeView *treeView;
-    QLabel *label;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QLabel *strudentName;
+    QPushButton *OKButton;
+    QPushButton *NOButton;
+    QPushButton *returnButton;
     QMenuBar *menuBar;
     QMenu *menu;
     QMenu *menu_2;
@@ -49,22 +49,23 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(724, 433);
-        actionDfh = new QAction(MainWindow);
-        actionDfh->setObjectName(QStringLiteral("actionDfh"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         treeView = new QTreeView(centralWidget);
         treeView->setObjectName(QStringLiteral("treeView"));
         treeView->setGeometry(QRect(0, 0, 161, 381));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(200, 40, 54, 12));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 140, 111, 51));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(390, 140, 111, 51));
+        strudentName = new QLabel(centralWidget);
+        strudentName->setObjectName(QStringLiteral("strudentName"));
+        strudentName->setGeometry(QRect(200, 40, 271, 71));
+        OKButton = new QPushButton(centralWidget);
+        OKButton->setObjectName(QStringLiteral("OKButton"));
+        OKButton->setGeometry(QRect(300, 140, 111, 51));
+        NOButton = new QPushButton(centralWidget);
+        NOButton->setObjectName(QStringLiteral("NOButton"));
+        NOButton->setGeometry(QRect(420, 140, 111, 51));
+        returnButton = new QPushButton(centralWidget);
+        returnButton->setObjectName(QStringLiteral("returnButton"));
+        returnButton->setGeometry(QRect(470, 200, 141, 23));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -92,10 +93,8 @@ public:
         menuBar->addAction(menu_2->menuAction());
         menuBar->addAction(menu_4->menuAction());
         menuBar->addAction(menu_5->menuAction());
-        menu->addAction(actionDfh);
 
         retranslateUi(MainWindow);
-        QObject::connect(pushButton, SIGNAL(clicked(bool)), MainWindow, SLOT(setAnimated(bool)));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -103,10 +102,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        actionDfh->setText(QApplication::translate("MainWindow", "dfh", 0));
-        label->setText(QApplication::translate("MainWindow", "TextLabel", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        strudentName->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        OKButton->setText(QApplication::translate("MainWindow", "\345\210\260\344\272\206\342\225\260(\357\277\243\342\226\275\357\277\243)\342\225\256", 0));
+        NOButton->setText(QApplication::translate("MainWindow", "\346\262\241\345\210\260\342\225\256(\342\225\257\342\226\275\342\225\260)\342\225\255", 0));
+        returnButton->setText(QApplication::translate("MainWindow", "\346\222\244\351\224\200\344\270\212\344\270\200\346\223\215\344\275\234", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", 0));
         menu_2->setTitle(QApplication::translate("MainWindow", "\350\247\206\345\233\276", 0));
         menu_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221", 0));

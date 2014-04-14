@@ -24,43 +24,56 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="strudentName">
     <property name="geometry">
      <rect>
       <x>200</x>
       <y>40</y>
-      <width>54</width>
-      <height>12</height>
+      <width>271</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="OKButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>270</x>
       <y>140</y>
       <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>到了╰(￣▽￣)╮</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="NOButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>440</x>
       <y>140</y>
       <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>没到╮(╯▽╰)╭</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="returnButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>200</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>撤销上一操作</string>
     </property>
    </widget>
   </widget>
@@ -77,9 +90,6 @@
     <property name="title">
      <string>文件</string>
     </property>
-    <addaction name="actionDfh"/>
-    <addaction name="actionSg"/>
-    <addaction name="actionYhjh"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -116,40 +126,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionDfh">
-   <property name="text">
-    <string>dfh</string>
-   </property>
-  </action>
-  <action name="actionSg">
-   <property name="text">
-    <string>sg</string>
-   </property>
-  </action>
-  <action name="actionYhjh">
-   <property name="text">
-    <string>yhjh</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>setAnimated(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>261</x>
-     <y>195</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>259</x>
-     <y>288</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
+ <slots>
+  <slot>slot1()</slot>
+ </slots>
 </ui>
