@@ -20,7 +20,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QTreeView>
 #include <QtWidgets/QWidget>
 
@@ -36,12 +35,11 @@ public:
     QPushButton *NOButton;
     QPushButton *returnButton;
     QMenuBar *menuBar;
-    QMenu *menu;
-    QMenu *menu_2;
-    QMenu *menu_3;
-    QMenu *menu_4;
-    QMenu *menu_5;
-    QToolBar *mainToolBar;
+    QMenu *fileMenu;
+    QMenu *viewMenu;
+    QMenu *editMenu;
+    QMenu *operateMenu;
+    QMenu *volumeMenu;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -53,16 +51,22 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         treeView = new QTreeView(centralWidget);
         treeView->setObjectName(QStringLiteral("treeView"));
-        treeView->setGeometry(QRect(0, 0, 161, 381));
+        treeView->setGeometry(QRect(0, 0, 161, 371));
         strudentName = new QLabel(centralWidget);
         strudentName->setObjectName(QStringLiteral("strudentName"));
-        strudentName->setGeometry(QRect(200, 40, 271, 71));
+        strudentName->setGeometry(QRect(280, 30, 321, 81));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setPointSize(48);
+        font.setBold(true);
+        font.setWeight(75);
+        strudentName->setFont(font);
         OKButton = new QPushButton(centralWidget);
         OKButton->setObjectName(QStringLiteral("OKButton"));
-        OKButton->setGeometry(QRect(300, 140, 111, 51));
+        OKButton->setGeometry(QRect(270, 140, 111, 51));
         NOButton = new QPushButton(centralWidget);
         NOButton->setObjectName(QStringLiteral("NOButton"));
-        NOButton->setGeometry(QRect(420, 140, 111, 51));
+        NOButton->setGeometry(QRect(440, 140, 111, 51));
         returnButton = new QPushButton(centralWidget);
         returnButton->setObjectName(QStringLiteral("returnButton"));
         returnButton->setGeometry(QRect(470, 200, 141, 23));
@@ -70,29 +74,26 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 724, 23));
-        menu = new QMenu(menuBar);
-        menu->setObjectName(QStringLiteral("menu"));
-        menu_2 = new QMenu(menuBar);
-        menu_2->setObjectName(QStringLiteral("menu_2"));
-        menu_3 = new QMenu(menuBar);
-        menu_3->setObjectName(QStringLiteral("menu_3"));
-        menu_4 = new QMenu(menuBar);
-        menu_4->setObjectName(QStringLiteral("menu_4"));
-        menu_5 = new QMenu(menuBar);
-        menu_5->setObjectName(QStringLiteral("menu_5"));
+        fileMenu = new QMenu(menuBar);
+        fileMenu->setObjectName(QStringLiteral("fileMenu"));
+        viewMenu = new QMenu(menuBar);
+        viewMenu->setObjectName(QStringLiteral("viewMenu"));
+        editMenu = new QMenu(menuBar);
+        editMenu->setObjectName(QStringLiteral("editMenu"));
+        operateMenu = new QMenu(menuBar);
+        operateMenu->setObjectName(QStringLiteral("operateMenu"));
+        volumeMenu = new QMenu(menuBar);
+        volumeMenu->setObjectName(QStringLiteral("volumeMenu"));
         MainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
 
-        menuBar->addAction(menu->menuAction());
-        menuBar->addAction(menu_3->menuAction());
-        menuBar->addAction(menu_2->menuAction());
-        menuBar->addAction(menu_4->menuAction());
-        menuBar->addAction(menu_5->menuAction());
+        menuBar->addAction(fileMenu->menuAction());
+        menuBar->addAction(editMenu->menuAction());
+        menuBar->addAction(viewMenu->menuAction());
+        menuBar->addAction(operateMenu->menuAction());
+        menuBar->addAction(volumeMenu->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -102,15 +103,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        strudentName->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        strudentName->setText(QApplication::translate("MainWindow", "NAME", 0));
         OKButton->setText(QApplication::translate("MainWindow", "\345\210\260\344\272\206\342\225\260(\357\277\243\342\226\275\357\277\243)\342\225\256", 0));
         NOButton->setText(QApplication::translate("MainWindow", "\346\262\241\345\210\260\342\225\256(\342\225\257\342\226\275\342\225\260)\342\225\255", 0));
         returnButton->setText(QApplication::translate("MainWindow", "\346\222\244\351\224\200\344\270\212\344\270\200\346\223\215\344\275\234", 0));
-        menu->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", 0));
-        menu_2->setTitle(QApplication::translate("MainWindow", "\350\247\206\345\233\276", 0));
-        menu_3->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221", 0));
-        menu_4->setTitle(QApplication::translate("MainWindow", "\346\223\215\344\275\234", 0));
-        menu_5->setTitle(QApplication::translate("MainWindow", "\345\243\260\351\237\263", 0));
+        fileMenu->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", 0));
+        viewMenu->setTitle(QApplication::translate("MainWindow", "\350\247\206\345\233\276", 0));
+        editMenu->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221", 0));
+        operateMenu->setTitle(QApplication::translate("MainWindow", "\346\223\215\344\275\234", 0));
+        volumeMenu->setTitle(QApplication::translate("MainWindow", "\345\243\260\351\237\263", 0));
     } // retranslateUi
 
 };
