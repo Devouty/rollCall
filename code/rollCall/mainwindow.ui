@@ -98,6 +98,7 @@
     <property name="title">
      <string>文件</string>
     </property>
+    <addaction name="actionAsd"/>
    </widget>
    <widget class="QMenu" name="viewMenu">
     <property name="title">
@@ -126,6 +127,11 @@
    <addaction name="volumeMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAsd">
+   <property name="text">
+    <string>asd</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -28,6 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionAsd;
     QWidget *centralWidget;
     QTreeView *treeView;
     QLabel *strudentName;
@@ -47,6 +48,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(724, 433);
+        actionAsd = new QAction(MainWindow);
+        actionAsd->setObjectName(QStringLiteral("actionAsd"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         treeView = new QTreeView(centralWidget);
@@ -94,6 +97,7 @@ public:
         menuBar->addAction(viewMenu->menuAction());
         menuBar->addAction(operateMenu->menuAction());
         menuBar->addAction(volumeMenu->menuAction());
+        fileMenu->addAction(actionAsd);
 
         retranslateUi(MainWindow);
 
@@ -103,6 +107,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionAsd->setText(QApplication::translate("MainWindow", "asd", 0));
         strudentName->setText(QApplication::translate("MainWindow", "NAME", 0));
         OKButton->setText(QApplication::translate("MainWindow", "\345\210\260\344\272\206\342\225\260(\357\277\243\342\226\275\357\277\243)\342\225\256", 0));
         NOButton->setText(QApplication::translate("MainWindow", "\346\262\241\345\210\260\342\225\256(\342\225\257\342\226\275\342\225\260)\342\225\255", 0));

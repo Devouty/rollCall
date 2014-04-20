@@ -16,6 +16,9 @@ public:
     ~MainWindow();
 
 
+private slots:
+    void on_OKButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
